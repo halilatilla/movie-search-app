@@ -1,23 +1,28 @@
 import { useState } from "react";
-import "./movie.scss";
 import axios from "axios";
+import "./search.scss";
 
-const Movie = () => {
+const Search = () => {
   const [title, setTitle] = useState("");
   const [year, setYear] = useState("");
   const [type, setType] = useState("");
-  const [movie, setMovie] = useState("test");
+  const [movie, setMovie] = useState("");
+  const [error, setError] = useState(false);
+  const [network, setNetwork] = useState(false);
   const onChangeHandle = (e, setState) => {
     setState(e.target.value);
   };
   const getMovie = async (e) => {
     setMovie("");
+    setError(false);
+    setError(false);
     axios
       .get(
-        `http://www.omdbapi.com/?t=${title}&y=${year}&type=${type}&apikey=e998f7fb`
+        `http://www.omdbapi.com/?t=${title}&y=${year}&type=${type}&apikey=${process.env.API_KEY}`
       )
       .then((res) => {
         if (res.data.Response === "False") {
+          setError(true);
           return;
         } else {
           setMovie(res.data);
@@ -25,6 +30,7 @@ const Movie = () => {
       })
       .catch((err) => {
         console.log(err);
+        setNetwork(true);
       });
   };
 
@@ -40,35 +46,24 @@ const Movie = () => {
       <input value={year} onChange={(e) => onChangeHandle(e, setYear)}></input>
       <label>Search By Type :</label>
       <select value={type} onChange={(e) => onChangeHandle(e, setType)}>
+        <option>select type</option>
         <option value="movie">movie</option>
         <option value="series">series</option>
         <option value="episode">episode</option>
       </select>
       <button onClick={getMovie}> Get Movie</button>
-      {movie ? (
+      {movie && (
         <>
           <div>{movie.Title}</div>
           <div>{movie.Year}</div>
           <div>{movie.imdbRating}</div>
           <img src={movie.Poster}></img>
         </>
-      ) : (
-        <div>Böyle bir içerik bulunamadı</div>
       )}
+      {error && <div>Böyle bir içerik bulunamadı</div>}
+      {network && <div>İnternet bağlantınızı konrol edin</div>}
     </>
   );
 };
-/* 
-Movie.getInitialProps = async (ctx) => {
-  const res = await Axios.get(
-    "http://www.omdbapi.com/?t=batman&apikey=e998f7fb"
-  );
-  console.log(res);
 
-  const json = await res.json();
-  console.log(json);
-
-  return { movie: json };
-}; */
-
-export default Movie;
+export default Search;

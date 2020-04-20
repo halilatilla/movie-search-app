@@ -1,7 +1,7 @@
-import Movie from "../components/Movie";
+import Search from "../components/search/Search";
 
 export default () => (
   <div>
-    <Movie />
+    <Search />
   </div>
 );
