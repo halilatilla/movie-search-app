@@ -1,7 +1,7 @@
-import HelloWorld from '../components/hello-world'
+import Movie from "../components/Movie";
 
 export default () => (
-  <div className="app">
-    <HelloWorld />
+  <div>
+    <Movie />
   </div>
-)
+);
