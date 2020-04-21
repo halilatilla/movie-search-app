@@ -1,5 +1,52 @@
-$color: blue;
+.container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  column-gap: 18px;
+  max-width: 600px;
+  margin: 30px auto;
+}
+input,
+select {
+  height: 30px;
+  border-radius: 5px;
+  border: 1px solid #ced4da;
+  font-size: 12px;
+  padding-left: 9px;
+  padding-right: 9px;
+  background-color: white;
+  overflow: hidden;
+}
+.button {
+  grid-column: 2/3;
+  width: 100%;
+  border: 1px solid #ced4da;
+  border-radius: 5px;
+  background-color: #fff;
+  height: 32px;
+  padding: 3px;
+  color: teal;
+  border-color: teal;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin: 0 auto;
+  margin-top: 18px;
+  &:focus {
+    outline: none;
+  }
+  &:active {
+    transform: scale(1.05);
+  }
+  &:hover {
+    box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.4);
+  }
+}
 
-.hello {
-  color: $color;
+.error {
+  text-align: center;
+  margin: 0 auto;
+  background-color: tomato;
+  width: 200px;
+  padding: 9px;
+  border-radius: 3px;
+  color: azure;
 }
