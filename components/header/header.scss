@@ -1,13 +1,37 @@
 .header {
   text-align: center;
   height: 60px;
-  //border-bottom: 1px solid #ced4da;
   box-shadow: 1px 1px 2px #ccc;
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: space-around;
   background-color: white;
   &-title {
-    font-size: 2rem;
+    font-size: 1rem;
+    border: 1px solid #ced4da;
+    border-radius: 5px;
+    height: 32px;
+    padding: 0 6px;
+    color: teal;
+    border-color: teal;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    &:focus {
+      outline: none;
+    }
+    &:active {
+      transform: scale(1.05);
+    }
+    &:hover {
+      box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.4);
+    }
   }
+}
+
+.logo {
+  width: 140px;
 }

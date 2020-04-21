@@ -4,6 +4,7 @@
   column-gap: 18px;
   max-width: 600px;
   margin: 30px auto;
+  padding: 9px;
 }
 input,
 select {
@@ -15,6 +16,9 @@ select {
   padding-right: 9px;
   background-color: white;
   overflow: hidden;
+}
+select {
+  height: 100%;
 }
 .button {
   grid-column: 2/3;
@@ -30,6 +34,11 @@ select {
   transition: all 0.3s ease;
   margin: 0 auto;
   margin-top: 18px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.8rem;
   &:focus {
     outline: none;
   }
@@ -39,14 +48,39 @@ select {
   &:hover {
     box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.4);
   }
+
+  .lds-dual-ring {
+    display: inline-block;
+    width: 15px;
+    height: 20px;
+  }
+  .lds-dual-ring:after {
+    content: '';
+    display: block;
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    border: 3px solid teal;
+    border-color: teal transparent teal transparent;
+    animation: lds-dual-ring 1.2s linear infinite;
+  }
+  @keyframes lds-dual-ring {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
 }
 
 .error {
   text-align: center;
   margin: 0 auto;
   background-color: tomato;
-  width: 200px;
+  width: max-content;
   padding: 9px;
   border-radius: 3px;
   color: azure;
+  font-size: 1rem;
 }

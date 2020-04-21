@@ -8,6 +8,7 @@ const Search = () => {
   const [year, setYear] = useState('');
   const [type, setType] = useState('');
   const [movie, setMovie] = useState('');
+  const [loading, setLoading] = useState(false);
   const [notFound, setNotFound] = useState(false);
   const [alert, setAlert] = useState(false);
   const [network, setNetwork] = useState(false);
@@ -15,7 +16,6 @@ const Search = () => {
   const onChangeHandle = (e, setState) => {
     setState(e.target.value);
   };
-  console.log(title);
 
   const getMovie = async () => {
     if (title === '') {
@@ -24,7 +24,7 @@ const Search = () => {
       setNetwork(false);
       return;
     }
-
+    setLoading(true);
     setMovie('');
     setNotFound(false);
     setAlert(false);
@@ -34,9 +34,11 @@ const Search = () => {
       .then((res) => {
         if (res.data.Response === 'False') {
           setNotFound(true);
+          setLoading(false);
           return;
         } else {
           setMovie(res.data);
+          setLoading(false);
         }
       })
       .catch((err) => {
@@ -57,11 +59,11 @@ const Search = () => {
           <option value="episode">episode</option>
         </select>
         <button className="button" onClick={getMovie}>
-          Get Movie
+          {loading ? <div className="lds-dual-ring"></div> : <span>Get Movie</span>}
         </button>
       </div>
-      {alert && <div className="error">Title is require !</div>}
-      {notFound && <div className="error">No such content was found</div>}
+      {alert && <div className="error">Movie name is require !</div>}
+      {notFound && <div className="error">No such content was found !</div>}
       {network && <div className="error">Check your internet connection</div>}
       {movie && <MovieCard movie={movie} />}
     </>
