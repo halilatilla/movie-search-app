@@ -48,7 +48,10 @@ export default ({ movie }) => {
       <div className="info-wrapper">
         <div className="name">{movie.Title}</div>
         <div className="date">{movie.Year}</div>
-        <div className="rating">Imdb - {movie.imdbRating} </div>
+        <div className="rating">
+          <img src="/assets/IMDB_Logo.png" />
+          <span>{movie.imdbRating}</span>
+        </div>
       </div>
       <div className="poster-wrapper">
         <img src={movie.Poster} alt="" className="poster" />
