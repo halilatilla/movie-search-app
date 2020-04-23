@@ -1,0 +1,7 @@
+.favorites {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 250px));
+  grid-auto-flow: dense;
+  grid-gap: 2rem;
+  justify-content: center;
+}

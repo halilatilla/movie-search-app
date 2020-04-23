@@ -1,11 +1,13 @@
 .movie {
+  background-color: #fff;
   box-shadow: 1px 1px 10px #ccc;
   border-top-left-radius: 5px;
   border-top-right-radius: 5px;
   max-width: 300px;
+  display: grid;
+  grid-template-rows: max-content 1fr;
   margin: 18px auto;
   text-align: center;
-  background-color: #fff;
   position: relative;
 }
 .info-wrapper {
@@ -26,6 +28,7 @@
 .poster-wrapper {
   overflow: hidden;
   cursor: pointer;
+  display: inline-flex;
 }
 .poster {
   width: 100%;
@@ -45,4 +48,13 @@
   top: 9px;
   border-radius: 50% !important;
   padding: 5px !important;
+}
+.fav-button-active {
+  position: absolute;
+  right: 9px;
+  top: 9px;
+  border-radius: 50% !important;
+  padding: 5px !important;
+  background-color: teal !important;
+  color: white !important;
 }
