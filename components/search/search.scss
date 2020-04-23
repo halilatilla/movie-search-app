@@ -20,35 +20,9 @@ select {
 select {
   height: 100%;
 }
-.button {
+.button-search {
   grid-column: 2/3;
-  width: 100%;
-  border: 1px solid #ced4da;
-  border-radius: 5px;
-  background-color: #fff;
-  height: 32px;
-  padding: 3px;
-  color: teal;
-  border-color: teal;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  margin: 0 auto;
   margin-top: 18px;
-  overflow: hidden;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 0.8rem;
-  &:focus {
-    outline: none;
-  }
-  &:active {
-    transform: scale(1.05);
-  }
-  &:hover {
-    box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.4);
-  }
-
   .lds-dual-ring {
     display: inline-block;
     width: 15px;

@@ -1,10 +1,11 @@
 import { useState } from 'react';
 import axios from 'axios';
 import './search.scss';
-import MovieCard from '../movie-card/MovieCard';
+import MovieCard from '../movie-card';
+import Button from '../button';
 
-const Search = () => {
-  const [title, setTitle] = useState('');
+export default () => {
+  const [title, setTitle] = useState('gump');
   const [year, setYear] = useState('');
   const [type, setType] = useState('');
   const [movie, setMovie] = useState('');
@@ -58,9 +59,9 @@ const Search = () => {
           <option value="series">series</option>
           <option value="episode">episode</option>
         </select>
-        <button className="button" onClick={getMovie}>
+        <Button className="button-search" onClick={getMovie}>
           {loading ? <div className="lds-dual-ring"></div> : <span>Get Movie</span>}
-        </button>
+        </Button>
       </div>
       {alert && <div className="error">Movie name is require !</div>}
       {notFound && <div className="error">No such content was found !</div>}
@@ -69,5 +70,3 @@ const Search = () => {
     </>
   );
 };
-
-export default Search;

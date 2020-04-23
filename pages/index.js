@@ -1,5 +1,5 @@
-import Search from "../components/search/Search";
-import Header from "../components/header/Header";
+import Search from '../components/search';
+import Header from '../components/header';
 
 export default () => (
   <>
@@ -11,11 +11,9 @@ export default () => (
         margin: 0;
         padding: 0;
         box-sizing: border-box;
-        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
-          "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji",
-          "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans', sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji',
+          'Segoe UI Symbol', 'Noto Color Emoji';
         background-color: #181a1b;
-        background-color: #f8f9fa;
       }
     `}</style>
   </>

@@ -6,6 +6,7 @@
   margin: 18px auto;
   text-align: center;
   background-color: #fff;
+  position: relative;
 }
 .info-wrapper {
   padding: 9px;
@@ -36,4 +37,12 @@
   &:hover {
     transform: scale(1.2);
   }
+}
+
+.fav-button {
+  position: absolute;
+  right: 9px;
+  top: 9px;
+  border-radius: 50% !important;
+  padding: 5px !important;
 }

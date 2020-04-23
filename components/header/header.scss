@@ -6,32 +6,10 @@
   align-items: center;
   justify-content: space-around;
   background-color: white;
-  &-title {
-    font-size: 1rem;
-    border: 1px solid #ced4da;
-    border-radius: 5px;
-    height: 32px;
+  &-button {
     padding: 0 6px;
-    color: teal;
-    border-color: teal;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    overflow: hidden;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    &:focus {
-      outline: none;
-    }
-    &:active {
-      transform: scale(1.05);
-    }
-    &:hover {
-      box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.4);
-    }
   }
-}
-
-.logo {
-  width: 140px;
+  &-logo {
+    width: 140px;
+  }
 }
