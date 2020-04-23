@@ -24,6 +24,7 @@ export default ({ movie }) => {
       setActive(true);
       movies.push(movie);
     } else {
+      setActive(true);
       movies.push(movie);
     }
 
