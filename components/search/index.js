@@ -45,6 +45,7 @@ export default () => {
       .catch((err) => {
         console.log(err);
         setNetwork(true);
+        setLoading(false);
       });
   };
 
