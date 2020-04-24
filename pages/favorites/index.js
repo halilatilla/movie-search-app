@@ -16,7 +16,7 @@ export default () => {
   }, []);
   return (
     <>
-      <Header></Header>
+      <Header onFavoritesPage />
       <div className="favorites">
         {movies.map((movie) => {
           return <MovieCard movie={movie} removeMovie={(newMovies) => removeMovie(newMovies)} key={movie.imdbID}></MovieCard>;
