@@ -1,8 +1,8 @@
 import { useState } from 'react';
 import axios from 'axios';
-import './search.scss';
 import MovieCard from '../movie-card';
 import Button from '../button';
+import './search.scss';
 
 export default () => {
   const [title, setTitle] = useState('');
