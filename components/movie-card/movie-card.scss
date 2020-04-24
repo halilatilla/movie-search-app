@@ -11,34 +11,48 @@
   position: relative;
 }
 .info-wrapper {
-  padding: 9px 30px;
+  padding: 18px 30px;
   display: grid;
-  grid-template-columns: 1fr;
-  row-gap: 9px;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
 }
 .name {
   font-size: 1.2rem;
   font-weight: bold;
   letter-spacing: 1px;
   color: teal;
+  border: 1px solid teal;
+  margin-top: 6px;
+  border-radius: 3px;
+  background-color: teal;
+  color: white;
+  padding: 3px 0;
+  grid-column: 1/3;
 }
 .date {
   font-size: 1rem;
+  background-color: teal;
+  color: white;
+  padding: 3px;
+  border-radius: 3px;
 }
 
 .rating {
   display: flex;
-  align-items: center;
   justify-content: center;
   border: 1px solid teal;
-  width: max-content;
-  margin: 0 auto;
-  padding-right: 3px;
   border-top-left-radius: 3px;
   border-bottom-left-radius: 3px;
+  width: max-content;
   img {
     width: 40px;
-    margin-right: 9px;
+    //margin-right: 9px;
+  }
+  span {
+    background-color: teal;
+    color: white;
+    padding: 1px 6px;
+    font-size: 15px;
   }
 }
 
@@ -61,8 +75,8 @@
 
 .fav-button {
   position: absolute;
-  right: 9px;
-  top: 9px;
+  right: 16px;
+  top: 23px;
   border-radius: 50% !important;
   padding: 5px !important;
 }
