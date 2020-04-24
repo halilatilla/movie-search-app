@@ -7,7 +7,7 @@ export default ({ onFavoritesPage }) => {
     <div className="header">
       <Link href="/">
         <a>
-          <img className="header-logo" src="/assets/v.png"></img>
+          <img className="header-logo" src="/assets/site-logo.png"></img>
         </a>
       </Link>
 
