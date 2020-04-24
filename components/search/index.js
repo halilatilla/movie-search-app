@@ -5,7 +5,7 @@ import MovieCard from '../movie-card';
 import Button from '../button';
 
 export default () => {
-  const [title, setTitle] = useState('gump');
+  const [title, setTitle] = useState('');
   const [year, setYear] = useState('');
   const [type, setType] = useState('');
   const [movie, setMovie] = useState('');
