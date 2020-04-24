@@ -6,6 +6,10 @@ import './favorites.scss';
 export default () => {
   const [movies, setMovies] = useState([]);
 
+  const removeMovie = (newMovies) => {
+    setMovies(newMovies);
+  };
+
   useEffect(() => {
     let favorites = JSON.parse(localStorage.getItem('favorites')) || [];
     setMovies(favorites);
@@ -15,7 +19,7 @@ export default () => {
       <Header></Header>
       <div className="favorites">
         {movies.map((movie) => {
-          return <MovieCard movie={movie} key={movie.imdbID}></MovieCard>;
+          return <MovieCard movie={movie} removeMovie={(newMovies) => removeMovie(newMovies)} key={movie.imdbID}></MovieCard>;
         })}
       </div>
 

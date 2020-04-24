@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import './movie-card.scss';
 import Button from '../button';
 
-export default ({ movie }) => {
+export default ({ movie, removeMovie }) => {
   const [active, setActive] = useState(false);
 
   let movies = [];
@@ -19,6 +19,7 @@ export default ({ movie }) => {
           return mov.imdbID !== movie.imdbID;
         });
         localStorage.setItem('favorites', JSON.stringify(newMovies));
+        removeMovie && removeMovie(newMovies);
         return;
       }
       setActive(true);
