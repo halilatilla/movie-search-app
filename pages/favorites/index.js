@@ -5,6 +5,7 @@ import './favorites.scss';
 
 export default () => {
   const [movies, setMovies] = useState([]);
+  console.log(movies);
 
   const removeMovie = (newMovies) => {
     setMovies(newMovies);

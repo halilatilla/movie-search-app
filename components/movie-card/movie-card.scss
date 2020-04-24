@@ -31,7 +31,7 @@
 }
 .date {
   font-size: 1rem;
-  background-color: teal;
+  background-color: black;
   color: white;
   padding: 3px;
   border-radius: 3px;
@@ -41,16 +41,15 @@
   display: flex;
   justify-content: center;
   border: 1px solid teal;
-  border-top-left-radius: 3px;
-  border-bottom-left-radius: 3px;
+  border-radius: 3px;
   width: max-content;
+  justify-self: flex-end;
   img {
     width: 40px;
-    //margin-right: 9px;
   }
   span {
-    background-color: teal;
-    color: white;
+    background-color: black;
+    color: #f6c700;
     padding: 1px 6px;
     font-size: 15px;
   }
