@@ -49,8 +49,10 @@ export default ({ movie, removeMovie }) => {
       <div className="info-wrapper">
         <div className="name">{movie.Title}</div>
         <div className="date">{movie.Year}</div>
-        <div className="rating">
-          <img src="/assets/IMDB_Logo.png" />
+        <div className="rating-circle">
+          <svg className="round" viewBox="0 0 40 40" width="35" height="35" strokeDasharray={`${Math.floor((movie.imdbRating * 112) / 10)} 999`}>
+            <circle cx="50%" cy="50%" r="18" />
+          </svg>
           <span>{movie.imdbRating}</span>
         </div>
       </div>

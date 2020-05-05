@@ -14,6 +14,7 @@
   padding: 18px 30px;
   display: grid;
   grid-template-columns: 1fr 1fr;
+  align-items: center;
   gap: 12px;
 }
 .name {
@@ -35,23 +36,31 @@
   color: white;
   padding: 3px;
   border-radius: 3px;
+  height: max-content;
 }
 
-.rating {
-  display: flex;
-  justify-content: center;
-  border: 1px solid teal;
-  border-radius: 3px;
+.rating-circle {
+  position: relative;
   width: max-content;
   justify-self: flex-end;
-  img {
-    width: 40px;
-  }
+  display: flex;
   span {
-    background-color: black;
-    color: #f6c700;
-    padding: 1px 6px;
-    font-size: 15px;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 14px;
+  }
+  .round {
+    transform: rotate(-90deg);
+    transition: all 1s ease-in-out;
+
+    /* SVG */
+    fill: none;
+    stroke: teal;
+    stroke-width: 2;
+    stroke-linecap: round;
+    // stroke-dasharray: 0 999;
   }
 }
 
