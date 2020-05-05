@@ -48,6 +48,7 @@ export default ({ movie, removeMovie }) => {
       </Button>
       <div className="info-wrapper">
         <div className="name">{movie.Title}</div>
+        <div className="country">{movie.Country}</div>
         <div className="date">{movie.Year}</div>
         <div className="rating-circle">
           <svg className="round" viewBox="0 0 40 40" width="35" height="35" strokeDasharray={`${Math.floor((movie.imdbRating * 112) / 10)} 999`}>
