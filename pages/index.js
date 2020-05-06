@@ -6,7 +6,7 @@ export default () => (
   <>
     <Head>
       <title>Movie Search</title>
-      <meta name="viewport" content="initial-scale=1.0, width=device-width" />
+      <meta name="viewport" http-equiv="Content-Security-Policy" content="initial-scale=1.0, width=device-width,upgrade-insecure-requests" />
       <link rel="icon" type="image/icon" href="/assets/favicon.ico" />
     </Head>
     <Header />
