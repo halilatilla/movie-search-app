@@ -31,7 +31,7 @@ export default () => {
     setAlert(false);
     setNetwork(false);
     axios
-      .get(`http://www.omdbapi.com/?t=${title}&y=${year}&type=${type}&apikey=${process.env.API_KEY}`)
+      .get(`https://www.omdbapi.com/?t=${title}&y=${year}&type=${type}&apikey=${process.env.API_KEY}`)
       .then((res) => {
         if (res.data.Response === 'False') {
           setNotFound(true);
