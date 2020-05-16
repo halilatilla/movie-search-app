@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import axios from 'axios';
+import randomWords from 'random-words';
 import MovieCard from '../movie-card';
 import Button from '../button';
 import './search.scss';
@@ -48,6 +49,39 @@ export default () => {
         setLoading(false);
       });
   };
+  const getRandomMovie = async () => {
+    /* if (title === '') {
+      setAlert(true);
+      setNotFound(false);
+      setNetwork(false);
+      return;
+    } */
+    /*  setLoading(true);
+    setMovie('');
+    setNotFound(false);
+    setAlert(false);
+    setNetwork(false); */
+    const randomTitle = randomWords();
+    console.log(randomTitle);
+
+    axios
+      .get(`https://www.omdbapi.com/?t=${randomTitle}&apikey=${process.env.API_KEY}`)
+      .then((res) => {
+        if (res.data.Response === 'False') {
+          setNotFound(true);
+          setLoading(false);
+          return;
+        } else {
+          setMovie(res.data);
+          setLoading(false);
+        }
+      })
+      .catch((err) => {
+        console.log(err);
+        setNetwork(true);
+        setLoading(false);
+      });
+  };
 
   return (
     <>
@@ -60,8 +94,9 @@ export default () => {
           <option value="series">series</option>
           <option value="episode">episode</option>
         </select>
-        <Button className="button-search" onClick={getMovie}>
-          {loading ? <div className="lds-dual-ring"></div> : <span>Get Movie</span>}
+
+        <Button className="button-search" onClick={title === '' ? getRandomMovie : getMovie}>
+          {loading ? <div className="lds-dual-ring"></div> : title === '' ? <span>Get Random Movie</span> : <span>Get Movie</span>}
         </Button>
       </div>
       {alert && <div className="error">Movie name is require !</div>}
