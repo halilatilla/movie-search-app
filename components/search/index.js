@@ -50,20 +50,12 @@ export default () => {
       });
   };
   const getRandomMovie = async () => {
-    /* if (title === '') {
-      setAlert(true);
-      setNotFound(false);
-      setNetwork(false);
-      return;
-    } */
-    /*  setLoading(true);
+    setLoading(true);
     setMovie('');
     setNotFound(false);
     setAlert(false);
-    setNetwork(false); */
+    setNetwork(false);
     const randomTitle = randomWords();
-    console.log(randomTitle);
-
     axios
       .get(`https://www.omdbapi.com/?t=${randomTitle}&apikey=${process.env.API_KEY}`)
       .then((res) => {
