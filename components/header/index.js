@@ -9,7 +9,7 @@ export default ({ onFavoritesPage }) => {
     <div className="header">
       <Link href="/">
         <a>
-          <LazyLoadImage effect="blur" width={140} height={50} src="/assets/site-logo.png" />
+          <img src="/assets/site-logo.svg" alt="" className="header-logo" />
         </a>
       </Link>
 
