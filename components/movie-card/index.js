@@ -1,4 +1,6 @@
 import { useState, useEffect } from 'react';
+import { LazyLoadImage } from 'react-lazy-load-image-component';
+import './blur.scss';
 import './movie-card.scss';
 import Button from '../button';
 
@@ -58,7 +60,7 @@ export default ({ movie, removeMovie }) => {
         </div>
       </div>
       <div className="poster-wrapper">
-        <img src={movie.Poster} alt="" className="poster" />
+        <LazyLoadImage effect="blur" width={300} height={450} placeholderSrc src={movie.Poster} />
       </div>
     </div>
   );
