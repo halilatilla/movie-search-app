@@ -1,4 +1,6 @@
 import Link from 'next/link';
+import { LazyLoadImage } from 'react-lazy-load-image-component';
+import './blur.scss';
 import './header.scss';
 import Button from '../button';
 
@@ -7,7 +9,7 @@ export default ({ onFavoritesPage }) => {
     <div className="header">
       <Link href="/">
         <a>
-          <img className="header-logo" src="/assets/site-logo.png"></img>
+          <LazyLoadImage effect="blur" width={140} height={50} src="/assets/site-logo.png" />
         </a>
       </Link>
 
