@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import { LazyLoadImage } from 'react-lazy-load-image-component';
+import { motion } from 'framer-motion';
 import './blur.scss';
 import './movie-card.scss';
 import Button from '../button';
@@ -43,8 +44,12 @@ export default ({ movie, removeMovie }) => {
     }
   }, []);
 
+  const variants = {
+    visible: { opacity: 1, y: 0 },
+    hidden: { opacity: 0, y: 300 }
+  };
   return (
-    <div className="movie">
+    <motion.div className="movie" initial="hidden" animate="visible" variants={variants}>
       <Button onClick={(e) => addFav(e)} className="fav-button">
         <img className="fav-icon" src={active ? '/assets/star-full.png' : '/assets/star-empty.png'}></img>
       </Button>
@@ -62,6 +67,6 @@ export default ({ movie, removeMovie }) => {
       <div className="poster-wrapper">
         <LazyLoadImage effect="blur" width={300} height={450} placeholderSrc src={movie.Poster} />
       </div>
-    </div>
+    </motion.div>
   );
 };
