@@ -2,7 +2,8 @@
   "scripts": {
     "dev": "next",
     "build": "next build",
-    "start": "next start"
+    "start": "next start",
+    "icon": "svgr icons -d components/icons --icon --replace-attr-values \"#fff=currentColor\""
   },
   "dependencies": {
     "@zeit/next-sass": "^1.0.1",
@@ -15,5 +16,8 @@
     "react": "^16.7.0",
     "react-dom": "^16.7.0",
     "react-lazy-load-image-component": "^1.4.3"
+  },
+  "devDependencies": {
+    "@svgr/cli": "^5.4.0"
   }
 }
