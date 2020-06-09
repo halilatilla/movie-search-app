@@ -3,6 +3,8 @@ import axios from 'axios';
 import randomWords from 'random-words';
 import MovieCard from '../movie-card';
 import Button from '../button';
+import Loader from '../loader';
+
 import './search.scss';
 
 export default () => {
@@ -88,9 +90,10 @@ export default () => {
         </select>
 
         <Button className="button-search" onClick={title === '' ? getRandomMovie : getMovie}>
-          {loading ? <div className="lds-dual-ring"></div> : title === '' ? <span>Get Random Movie</span> : <span>Get Movie</span>}
+          {loading ? <Loader width="25px" /> : title === '' ? <span>Get Random Movie</span> : <span>Get Movie</span>}
         </Button>
       </div>
+
       {alert && <div className="error">Movie name is require !</div>}
       {notFound && <div className="error">No such content was found !</div>}
       {network && <div className="error">Check your internet connection</div>}
