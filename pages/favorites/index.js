@@ -1,7 +1,6 @@
 import { useState, useEffect } from 'react';
 import MovieCard from '../../components/movie-card';
 import Header from '../../components/header';
-import './favorites.scss';
 
 export default () => {
   const [movies, setMovies] = useState([]);
@@ -21,15 +20,12 @@ export default () => {
           return <MovieCard movie={movie} removeMovie={(newMovies) => removeMovie(newMovies)} key={movie.imdbID}></MovieCard>;
         })}
       </div>
-
       <style jsx>{`
-        :global(body) {
-          margin: 0;
-          padding: 0;
-          box-sizing: border-box;
-          font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans', sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji',
-            'Segoe UI Symbol', 'Noto Color Emoji';
-          background-color: #181a1b;
+        .favorites {
+          display: grid;
+          grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+          grid-gap: 1rem;
+          margin-top: 30px;
         }
       `}</style>
     </>
