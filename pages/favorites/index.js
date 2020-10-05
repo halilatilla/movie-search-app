@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import MovieCard from '../../components/movie-card';
 import Header from '../../components/header';
+import './favorites.scss';
 
 export default () => {
   const [movies, setMovies] = useState([]);
@@ -20,14 +21,7 @@ export default () => {
           return <MovieCard movie={movie} removeMovie={(newMovies) => removeMovie(newMovies)} key={movie.imdbID}></MovieCard>;
         })}
       </div>
-      <style jsx>{`
-        .favorites {
-          display: grid;
-          grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-          grid-gap: 1rem;
-          margin-top: 30px;
-        }
-      `}</style>
+      <style jsx>{``}</style>
     </>
   );
 };

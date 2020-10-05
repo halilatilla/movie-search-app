@@ -2,12 +2,12 @@
 
 https://movie-search-app.atillahalil0.now.sh/
 
-**You can search movies.**
+**You can search for a specific movie.**
 
-**Or You can try your luck.**
+**Or you can try your luck.**
 
 ![find movie](./public/assets/image1.png)
 
-**And add local favorites.**
+**And you can save your favorite movie to localstroge.**
 
 ![find movie](./public/assets/image2.png)

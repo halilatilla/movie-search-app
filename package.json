@@ -7,15 +7,15 @@
   },
   "dependencies": {
     "@zeit/next-sass": "^1.0.1",
-    "axios": "^0.19.2",
+    "axios": "^0.20.0",
     "dotenv": "^8.2.0",
-    "framer-motion": "^1.11.0",
+    "framer-motion": "^2.7.7",
     "next": "latest",
-    "node-sass": "^4.13.1",
+    "node-sass": "^4.14.1",
     "random-words": "^1.1.1",
-    "react": "^16.7.0",
-    "react-dom": "^16.7.0",
-    "react-lazy-load-image-component": "^1.4.3"
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1",
+    "react-lazy-load-image-component": "^1.5.0"
   },
   "devDependencies": {
     "@svgr/cli": "^5.4.0"
