@@ -1,11 +1,9 @@
 import { useState, useEffect } from 'react';
 import { LazyLoadImage } from 'react-lazy-load-image-component';
 import { motion } from 'framer-motion';
-import './blur.scss';
-import './movie-card.scss';
-import Button from '../button';
+import Button from './Button';
 
-export default ({ movie, removeMovie }) => {
+export default function MovieCard({ movie, removeMovie }) {
   const [active, setActive] = useState(false);
 
   let movies = [];
@@ -69,4 +67,4 @@ export default ({ movie, removeMovie }) => {
       </div>
     </motion.div>
   );
-};
+}

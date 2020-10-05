@@ -1,13 +1,11 @@
 import { useState } from 'react';
 import axios from 'axios';
 import randomWords from 'random-words';
-import MovieCard from '../movie-card';
-import Button from '../button';
-import Loader from '../loader';
+import MovieCard from './MovieCard';
+import Button from './Button';
+import Loader from './Loader';
 
-import './search.scss';
-
-export default () => {
+export default function Search() {
   const [title, setTitle] = useState('');
   const [year, setYear] = useState('');
   const [type, setType] = useState('');
@@ -16,10 +14,6 @@ export default () => {
   const [notFound, setNotFound] = useState(false);
   const [alert, setAlert] = useState(false);
   const [network, setNetwork] = useState(false);
-
-  const onChangeHandle = (e, setState) => {
-    setState(e.target.value);
-  };
 
   const getMovie = async () => {
     if (title === '') {
@@ -80,9 +74,9 @@ export default () => {
   return (
     <>
       <div className="container">
-        <input value={title} onChange={(e) => onChangeHandle(e, setTitle)} placeholder="Enter Movie Name"></input>
-        <input value={year} onChange={(e) => onChangeHandle(e, setYear)} placeholder="Enter Movie Year"></input>
-        <select value={type} onChange={(e) => onChangeHandle(e, setType)}>
+        <input value={title} onChange={(e) => setTitle(e.target.value)} placeholder="Enter Movie Name"></input>
+        <input value={year} onChange={(e) => setYear(e.target.value)} placeholder="Enter Movie Year"></input>
+        <select value={type} onChange={(e) => setType(e.target.value)}>
           <option>select type</option>
           <option value="movie">movie</option>
           <option value="series">series</option>
@@ -100,4 +94,4 @@ export default () => {
       {movie && <MovieCard movie={movie} />}
     </>
   );
-};
+}

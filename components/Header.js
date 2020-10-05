@@ -1,9 +1,8 @@
 import Link from 'next/link';
-import './header.scss';
-import Button from '../button';
-import { SiteLogo } from '../icons/index';
+import Button from './Button';
+import { SiteLogo } from './icons/index';
 
-export default ({ onFavoritesPage }) => {
+export default function Header({ onFavoritesPage }) {
   return (
     <div className="header">
       <Link href="/">
@@ -27,4 +26,4 @@ export default ({ onFavoritesPage }) => {
       )}
     </div>
   );
-};
+}

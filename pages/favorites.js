@@ -1,9 +1,8 @@
 import { useState, useEffect } from 'react';
-import MovieCard from '../../components/movie-card';
-import Header from '../../components/header';
-import './favorites.scss';
+import MovieCard from '../components/MovieCard';
+import Header from '../components/Header';
 
-export default () => {
+export default function Favorites() {
   const [movies, setMovies] = useState([]);
   const removeMovie = (newMovies) => {
     setMovies(newMovies);
@@ -24,4 +23,4 @@ export default () => {
       <style jsx>{``}</style>
     </>
   );
-};
+}

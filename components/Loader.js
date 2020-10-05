@@ -7,7 +7,7 @@ const pathVariants = {
   }
 };
 
-export default ({ width }) => {
+export default function Loader({ width }) {
   return (
     <motion.svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width={width}>
       <motion.path
@@ -17,4 +17,4 @@ export default ({ width }) => {
       />
     </motion.svg>
   );
-};
+}
