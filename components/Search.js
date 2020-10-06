@@ -74,14 +74,22 @@ export default function Search() {
   return (
     <>
       <div className="container">
-        <input value={title} onChange={(e) => setTitle(e.target.value)} placeholder="Enter Movie Name"></input>
-        <input value={year} onChange={(e) => setYear(e.target.value)} placeholder="Enter Movie Year"></input>
-        <select value={type} onChange={(e) => setType(e.target.value)}>
-          <option>select type</option>
-          <option value="movie">movie</option>
-          <option value="series">series</option>
-          <option value="episode">episode</option>
-        </select>
+        <label>
+          Enter Movie Name
+          <input value={title} onChange={(e) => setTitle(e.target.value)} placeholder="Name"></input>
+        </label>
+        <label>
+          Enter Movie Year
+          <input value={year} onChange={(e) => setYear(e.target.value)} placeholder="Year"></input>
+        </label>
+        <label>
+          Select A Type
+          <select value={type} onChange={(e) => setType(e.target.value)} aria-label="Select a type">
+            <option value="movie">movie</option>
+            <option value="series">series</option>
+            <option value="episode">episode</option>
+          </select>
+        </label>
 
         <Button className="button-search" onClick={title === '' ? getRandomMovie : getMovie}>
           {loading ? <Loader width="25px" /> : title === '' ? <span>Get Random Movie</span> : <span>Get Movie</span>}

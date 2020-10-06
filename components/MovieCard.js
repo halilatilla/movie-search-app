@@ -49,21 +49,21 @@ export default function MovieCard({ movie, removeMovie }) {
   return (
     <motion.div className="movie" initial="hidden" animate="visible" variants={variants}>
       <Button onClick={(e) => addFav(e)} className="fav-button">
-        <img className="fav-icon" src={active ? '/assets/star-full.png' : '/assets/star-empty.png'}></img>
+        <img alt="add favorite button" tabIndex="0" className="fav-icon" src={active ? '/assets/star-full.png' : '/assets/star-empty.png'}></img>
       </Button>
       <div className="info-wrapper">
         <div className="name">{movie.Title}</div>
         <div className="country">{movie.Country}</div>
         <div className="date">{movie.Year}</div>
         <div className="rating-circle">
-          <svg className="round" viewBox="0 0 40 40" width="35" height="35" strokeDasharray={`${Math.floor((movie.imdbRating * 112) / 10)} 999`}>
+          <svg aria-label="movie rating" className="round" viewBox="0 0 40 40" width="35" height="35" strokeDasharray={`${Math.floor((movie.imdbRating * 112) / 10)} 999`}>
             <circle cx="50%" cy="50%" r="18" />
           </svg>
           <span>{movie.imdbRating}</span>
         </div>
       </div>
       <div className="poster-wrapper">
-        <LazyLoadImage effect="blur" width={300} height={450} placeholderSrc src={movie.Poster} />
+        <LazyLoadImage effect="blur" width={300} height={450} placeholderSrc src={movie.Poster} alt={movie.Title} />
       </div>
     </motion.div>
   );

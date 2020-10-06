@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import MovieCard from '../components/MovieCard';
-import Header from '../components/Header';
+import Navbar from '../components/Navbar';
 
 export default function Favorites() {
   const [movies, setMovies] = useState([]);
@@ -14,7 +14,7 @@ export default function Favorites() {
   }, []);
   return (
     <>
-      <Header onFavoritesPage />
+      <Navbar onFavoritesPage />
       <div className="favorites">
         {movies.map((movie) => {
           return <MovieCard movie={movie} removeMovie={(newMovies) => removeMovie(newMovies)} key={movie.imdbID}></MovieCard>;
