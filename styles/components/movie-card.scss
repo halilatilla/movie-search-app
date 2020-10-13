@@ -67,6 +67,10 @@
   }
 }
 
+.movie-description {
+  grid-column: 1/4;
+}
+
 .poster-wrapper {
   overflow: hidden;
   cursor: pointer;

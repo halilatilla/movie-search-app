@@ -61,9 +61,14 @@ export default function MovieCard({ movie, removeMovie }) {
           </svg>
           <span>{movie.imdbRating}</span>
         </div>
+        {movie.Plot !== 'N/A' && <p className="movie-description">{movie.Plot} </p>}
       </div>
       <div className="poster-wrapper">
-        <LazyLoadImage effect="blur" width={300} height={450} placeholderSrc src={movie.Poster} alt={movie.Title} />
+        {movie.Poster !== 'N/A' ? (
+          <LazyLoadImage effect="blur" width={300} height={450} placeholderSrc src={movie.Poster} alt={movie.Title} />
+        ) : (
+          <LazyLoadImage effect="blur" width={300} height={450} placeholderSrc src="https://placehold.it/300x450?text=No%20Movie%20Image" alt={movie.Title} />
+        )}
       </div>
     </motion.div>
   );
