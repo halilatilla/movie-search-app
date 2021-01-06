@@ -6,7 +6,7 @@
     "icon": "svgr icons -d components/icons --icon --replace-attr-values \"#fff=currentColor\""
   },
   "dependencies": {
-    "axios": "^0.20.0",
+    "axios": "^0.21.1",
     "dotenv": "^8.2.0",
     "framer-motion": "^2.7.7",
     "mobx": "^6.0.0",
