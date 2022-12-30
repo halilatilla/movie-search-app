@@ -13,7 +13,7 @@
     "mobx-react": "^7.0.0",
     "mobx-state-tree": "^3.17.2",
     "next": "latest",
-    "random-words": "^1.1.1",
+    "random-words": "^1.2.0",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "react-lazy-load-image-component": "^1.5.0",
